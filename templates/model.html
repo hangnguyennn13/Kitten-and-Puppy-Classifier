@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/model.css') }}">
+    <title>Model Page</title>
+</head>
+<body>
+    
+    <div class="bg-text">
+        <h1 class="w3-jumbo"><b>Jane Doe</b></h1>
+        <p>Photographer and Web Designer.</p>
+        <p><img src="/static/img/frame.jpg" id="output" width="200" alt="Load your image here" /></p>
+        <div>
+            <input type="file" accept="image/*" name="file" id="file" class="inputfile" onchange="loadFile(event)"/>
+            <label for="file">Upload</label>
+            
+            <div>
+                    <h1 id='result'></h1>
+            </div>
+            <script>
+            var loadFile = function(event) {
+                $('#result').text('  Predicting...');
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+                $.ajax({
+                type: "POST",
+                url: $SCRIPT_ROOT + "/model/upload/",
+                data: image.src,
+                success: function(data){
+                    $('#result').text('Predicted Output: ' + data);
+                }
+            });
+            };
+            </script>
+        </div>
+    </div>
+</body>
+</html>
