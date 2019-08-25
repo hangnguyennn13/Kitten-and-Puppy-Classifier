@@ -1,10 +1,7 @@
 .inputfile{
-    width: 0.1px;
-    height: 0.1px;
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    z-index: -1;
 }
 .inputfile + label {
     background-color: #f490a1;
@@ -29,25 +26,10 @@
 .inputfile + label {
     cursor: pointer; /* "hand" cursor */
 }
-.bg-text {
-    /* background-color: rgb(0, 0, 0); */
-    /* Fallback color */
-    /* background-color: rgba(0, 0, 0, 0.4); */
-    /* Black w/opacity/see-through */
-    color: black;
-    font-weight: bold;
-    /* border: 3px solid #f1f1f1; */
-    position:  absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 50px;
-    text-align: center;
-    font-size: 40px;
-}
-.myButton {
+input[type=submit]{
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
     background-color: #f490a1;
     border: none;
     color: white;
@@ -62,5 +44,3 @@
     cursor: pointer;
     font-family: sans-serif;
 }
-
-.myButton:hover {opacity: 1}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kitten and Puppy Classification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <h3 style="margin: auto;width: 80%; font-family: sans-serif; color: #f490a1; text-align: center; margin-top: 30px;"; >Kitten and Puppy Classification</h3>
+    <div style="width: 90%; margin: auto; text-align: center">
+        <img src="{{ url_for('send_file', filename=image_file_name)}}" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+
+        <h4 style="margin-top: 20px"><b>Predicted Label: <span style="color: #f490a1">{{ label }}</span></b></h4>
+        <h4><b>Accuracy : <span style="color: #f490a1;">{{ accuracy }} %</span></b></h4>
+        <a href="/model" style="color: salmon;margin-top: 50px;">Try again</a>
+    </div>
+</body>
+
+</html>
