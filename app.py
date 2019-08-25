@@ -11,7 +11,7 @@ UPLOAD_FOLDER = 'uploads'
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224
 
-model_new = tf.keras.models.load_model("static/models/catdog_classifer.h5")
+model_new = tf.keras.models.load_model("static/models/model3.h5")
 
 @app.route('/')
 def home():
@@ -34,18 +34,23 @@ def api(full_path):
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload_file():
-    if request.method == 'POST':
-        file = request.files['image']
-        full_name = os.path.join(UPLOAD_FOLDER, file.filename)
-        file.save(full_name)
+    if request.method == 'GET':
+        return render_template('model.html')
+    else:
+        if request.files['image']!= None:
+            file = request.files['image']
+            full_name = os.path.join(UPLOAD_FOLDER, file.filename)
+            file.save(full_name)
 
-        indices = {0: 'Cat', 1: 'Dog', 2: 'Invasive carcinomar', 3: 'Normal'}
-        result = api(full_name)
+            indices = {1: 'Cat', 0: 'Dog'}
+            result = api(full_name)
 
-        predicted_class = np.asscalar(np.argmax(result, axis=1))
-        accuracy = round(result[0][predicted_class] * 100, 2)
-        label = indices[predicted_class]
-        return render_template('predict.html', image_file_name = file.filename, label = label, accuracy = accuracy)
+            predicted_class = np.asscalar(np.argmax(result, axis=1))
+            accuracy = round(result[0][predicted_class] * 100, 2)
+            label = indices[predicted_class]
+            return render_template('predict.html', image_file_name = file.filename, label = label, accuracy = accuracy)
+        else:
+            return render_template('model.html')
 
 
 
