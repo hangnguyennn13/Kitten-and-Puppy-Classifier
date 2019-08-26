@@ -11,7 +11,7 @@ UPLOAD_FOLDER = 'uploads'
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224
 
-model_new = tf.keras.models.load_model("static/models/model3.h5")
+model_new = tf.keras.models.load_model("static/models/model4.h5")
 
 @app.route('/')
 def home():
