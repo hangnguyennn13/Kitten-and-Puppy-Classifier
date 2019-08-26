@@ -1,4 +1,4 @@
-# Kitten-and-Puppy-Classifier
+# Kitty and Puppy Classification using CNN 
 This weekly project is to perform image classification between cat and dog. The labeled dataset consists of 25,000 images, specially selected for classifying whether images contain either a dog or a cat. Then building a Flask app to help user upload their image and get the result that is a cat or dog photo.  
 ![Cat and Dog](https://gimmeinfo.com/wp-content/uploads/2016/02/pets-cat-dog-2-1100x866.jpg)
 
@@ -51,3 +51,25 @@ This weekly project is to perform image classification between cat and dog. The 
     7. Fine Tune
         * **Early Stopping:**
         * **Reduce Learning rate:**
+    
+    8. Label the test dataset
+
+* Build Flask App:
+    1. Visual Code as our environment to build flask app
+
+    2. Create a folder to store your work
+    
+    3. Create a virtual environment:
+        * virtualen env
+    
+    4. Activate the virtual environment:
+
+    5. Install libraries inside the virtual environment
+    
+    6. Activate debug mode:
+        '''python
+            if __name__ == "__main__":
+                app.run(debug = True)
+        '''
+    
+    7. Connect your model to flask
