@@ -62,8 +62,8 @@ This weekly project is to perform image classification between cat and dog. The 
     3. Create a virtual environment:
         * virtualen env
     
-    4. Activate the virtual environment:
-
+    4. [Activate the virtual environment](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/)
+        
     5. Install libraries inside the virtual environment
     
     6. Activate debug mode:
